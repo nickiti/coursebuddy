@@ -1,0 +1,38 @@
+<div>
+<div class="card">
+  <div class"card-header">
+    <%= link_to 'Back', courses_path, class: 'btn btn-primary' %>
+    <p>
+      <h1 class="card-title d-flex justify-content-between"><%= @course.name %> </h1>
+    </p>
+    <p>
+      <strong><%= @course.description %></strong>
+    </p>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div>
+<h2>Assignments</h2>
+<%= link_to 'New Assignment', new_course_assignment_path(@course.id), class: 'btn btn-primary' %>
+
+
+<% @course.assignments.each do |assignment| %>
+  <% if assignment.persisted? %>
+    <%= link_to [assignment.course,assignment] do%>
+      <div class="card row">
+        <div class="card-title col-md-3"><%= assignment.name %></div>
+        <div class="col-md-3 dropdown"><%= assignment.status %></div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
+</div>
+
+
+
+
