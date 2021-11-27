@@ -24,4 +24,26 @@
 <br />
 
 <%= link_to 'New Assignment', new_course_assignment_path(params[:course_id]) %>
-<%= link_to 'Back', courses_path %>
+
+<div class="card">
+  <div class="card-header">
+    
+    <h2 class='card-title d-flex justify-content-between'>
+      <span>Courses</span>
+      <%= link_to 'Add Course', new_course_path, class: 'btn btn-primary' %>
+    </h2>
+    
+    <% @assignments.each do |assignment| %>
+      <%= link_to assignment do %>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= assignment.name %></h5>
+            <p><%= assignment.description %></p>
+            <p><%= assignment.status %></p>
+            <p><%= assignment.date %></p>
+          </div>
+        </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>

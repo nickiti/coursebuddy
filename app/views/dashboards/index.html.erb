@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1>Hello Welcome</h1>
+
+<div>
+  <div class="card">
+    <div>
+    <% if @courses %>
+      <div class='container text-center'>
+        <h2>Assignments</h2>
+        <% @courses.each do |course| %>
+            <% course.assignments.each do |assignment| %>
+                <div class='card'>
+                  <div class="row assignment">
+                    <div class="column">
+                      <%= course.name %> <br>
+                      <%= assignment.name %>
+                    </div>
+        
+                    <div class='column'>
+                      <%= assignment.status %>
+                    </div>
+          
+                    <div class='column'>
+                      <%= assignment.date.strftime("DUE AT: %I:%M %p") %>
+                      <br>
+                      <%= assignment.date.strftime("%b %d") %>
+                    </div>
+                </div>
+                <div class="topcorner">
+                    <%= link_to 'Edit', edit_course_assignment_path(assignment.course, assignment), class:"btn btn-outline-secondary" %> 
+                </div>
+                </div>
+          <% end %>
+        <% end %>
+      <br>
+      <br>
+      </div>  
+      <% else %>
+    <div class='container text-center'>
+      <p>You have no assignments yet.</p>
+    </div>
+      <% end %>
+
+
+    </div>
+  </div>
+
+</div>
+
+<div class="card">
+  <div class='container text-center'>
+    <h2>Notes</h2>
+  <% if @notes %>
+    <div class='card'>
+    <% @notes.each do |note| %>
+      <%= link_to [note] do%>
+          <div class='assignment'>
+            <div class='text-center'>
+              <%= note.title %>
+              <hr>
+            </div>
+          </div>
+      <% end %>
+    <% end %>
+    </div>
+    <% else %>
+    
+    <div class='container text-center'>
+      <p> You have no notes yet.</p>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+

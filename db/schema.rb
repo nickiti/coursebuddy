@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_27_235721) do
+ActiveRecord::Schema.define(version: 2021_11_24_215714) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "assignments", force: :cascade do |t|
     t.string "name"
@@ -32,6 +35,25 @@ ActiveRecord::Schema.define(version: 2021_10_27_235721) do
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
+  create_table "dashboards", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
+  create_table "studies", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -46,4 +68,5 @@ ActiveRecord::Schema.define(version: 2021_10_27_235721) do
 
   add_foreign_key "assignments", "courses"
   add_foreign_key "courses", "users"
+  add_foreign_key "notes", "users"
 end

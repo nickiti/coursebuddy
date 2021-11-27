@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Back', notes_path, class:'btn btn-primary' %>
+
+
+<h1><%= @note.title %></h1>
+  
+
+<p>
+  <%= @note.content %>
+</p>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |

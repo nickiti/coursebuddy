@@ -1,3 +1,32 @@
 body {
     background-color: "white";
 }
+
+.topcorner{
+    position:absolute;
+    top:10px;
+    right: 10px;
+ }
+ 
+ .column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.assignment {
+    vertical-align: middle;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.pomo {
+    width: 960;
+    height: 660;
+}

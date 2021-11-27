@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Studies</h1>
+<div class='big help'>
+  <div class='help card'>
+      <div class="settings">
+          <i class="fas fa-cg fa-lg" text="Settings"></i>
+          <button id="settings-btn" class="set-btn fas fa-cog fa-lg" type="button">settings</button>
+      </div>
+      <br>
+      <div>
+        <div class="container">
+            <p id="pomo" class="top pomodoro active">Pomodoro</p>
+            <p id="break" class="top break">Break</p>
+        </div>
+        
+        <div class="timer" id="time" onload="setValue()">
+            <p id='w-min' class="time">00</p>
+            <p class="seperator">:</p>
+            <p id="w-sec" class="time">00</p>
+        </div>
+        
+        <div id="buttons">
+            <button id="start" class="button is-primary is-large btn btn-primary">Start</button>
+            &nbsp
+            <button id="pause" class="button is-large btn btn-primary">Pause</button>
+            <button id="reset" class="button is-large is-danger btn btn-primary">Reset</button>
+            <button id="skip" class="button is-large is-danger btn btn-primary">Skip</button>
+            <button id="skip-pomo" class="skip-pomo-btn fa-lg"></button>
+        </div>
+        
+        <div class="cycles">
+            <button id='minus-pomo' class='btn btn-primary'>-</i></button>
+            <p class="pomo-counter">Pomodoros : </p>
+            <p id="cycle">1</p>
+            <p> / </p>
+            <p id="total-cycles">4</p>
+            &nbsp
+            <button id="plus-pomo" class='btn btn-primary' >+</button>
+            
+        </div>
+        
+        <div class="msg">
+            <p id="message" class="msg-txt">Time to Work!</p>
+        </div>
+    
+        <div class="settings-container" id="settings">
+            <div class="settings-panel">
+                <button id="settings-close" class="close-settings fa-2x"></button>
+                <h3 class="setting-title timer-title">Timer Settings</h3>
+                <h4>Pomodoro</h4> <input type="number" placeholder="25" value="25" class="input is-medium is-link" min="15"
+                    max="30" id="setting-pomodoros">
+                <h4>Short Break</h4><input type="number" placeholder="05" value="5" class="input is-medium is-link" min="2"
+                    max="15" id="setting-break">
+                <button id="setting-okay" class="button is-info okay-btn">Okay</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+    
+  <%= javascript_pack_tag 'main'%>
+  <%= stylesheet_link_tag params[:controller] %>
