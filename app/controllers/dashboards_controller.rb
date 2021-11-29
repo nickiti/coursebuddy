@@ -6,7 +6,7 @@ class DashboardsController < ApplicationController
   def index
     @dashboard = Dashboard.all
     @courses = current_user.courses
-    @notes = Note.all
+    @notes = current_user.notes
   end
 
   # GET /dashboards/1 or /dashboards/1.json

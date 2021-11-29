@@ -2,9 +2,11 @@
 
 
 
-<h1>Hello Welcome</h1>
+
+ 
 
 <div>
+  <h1>Hello Welcome <%= current_user.email %></h1>
   <div class="card">
     <div>
     <% if @courses %>
@@ -19,8 +21,15 @@
                       <%= assignment.name %>
                     </div>
         
-                    <div class='column'>
-                      <%= assignment.status %>
+                    <div class='column dropdown'>
+                      <a class="btn btn-outline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         <%= assignment.status %>
+                        </a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Not Started</a>
+                          <a class="dropdown-item" href="#">In progress</a>
+                          <a class="dropdown-item" href="#">Completed</a>
+                        </div>
                     </div>
           
                     <div class='column'>
@@ -28,6 +37,11 @@
                       <br>
                       <%= assignment.date.strftime("%b %d") %>
                     </div>
+                    
+                    <div class='column btn btn-primary start'>
+                      START
+                    </div>
+                
                 </div>
                 <div class="topcorner">
                     <%= link_to 'Edit', edit_course_assignment_path(assignment.course, assignment), class:"btn btn-outline-secondary" %> 
