@@ -2,7 +2,7 @@
 
  
 
-<div>
+
   <h1>Hello Welcome <%= current_user.email %></h1>
   <div class="input-group">
     <%= form_tag(notes_path, :method => "get", id: "search-form") do %>
@@ -44,12 +44,15 @@
                       <br>
                       <%= assignment.date.strftime("%b %d") %>
                     </div>
-                    
-                    <div class='column btn btn-primary start'>
-                      START
+                    <div class='column'>
+                        <div class='btn btn-primary start' id='mixBut' onclick="startCount()">
+                          START
+                        </div>
+                        <div class='btn btn-danger stop' id='mixBut' onclick="stopCount()">
+                          STOP
+                        </div>
+                        <span class='txt'></span>
                     </div>
-                    <div class='easycountdown'></div>
-                
                 </div>
                 <div class="topcorner">
                     <%= link_to 'Edit', edit_course_assignment_path(assignment.course, assignment), class:"btn btn-outline-secondary" %> 
@@ -71,7 +74,9 @@
     </div>
   </div>
 
-</div>
+<br>
+<br>
+
 
 <div class="card">
   <div>
@@ -84,7 +89,7 @@
       <%= link_to [note] do%>
           <div class='assignment'>
             <div class='text-center'>
-              <%= note.title %>
+              <h2><%= note.title %></h2>
             </div>
           </div>
       <% end %>

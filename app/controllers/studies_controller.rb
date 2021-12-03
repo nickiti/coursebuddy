@@ -4,6 +4,8 @@ class StudiesController < ApplicationController
   # GET /studies or /studies.json
   def index
     @studies = Study.all
+    @courses = current_user.courses
+    @notes = current_user.notes
   end
 
   # GET /studies/1 or /studies/1.json

@@ -30,11 +30,6 @@ body {
     height: 660;
 }
 
-.start {
-    width: 120px;
-    height: 40px;
-    
-}
 
 .background {
     background: linear-gradient(#F67570, #FFD7B1);
@@ -77,8 +72,16 @@ body{
   }
 } 
 
-#movable{
+#movable {
    position: absolute;
+}
+
+#movable2 {
+    position: absolute;
+}
+
+#movable3{
+    position: absolute;
 }
 
 #movableclick {
@@ -102,4 +105,15 @@ body{
   top: 0;
   left: 0;
   display: none;
+}
+
+.notes {
+    width: 558px;
+    height: 315px;
+}
+
+
+.fill {
+    width: 1000px;
+    height: 1500px;
 }

@@ -1,6 +1,10 @@
-<h1>Editing Note</h1>
-
-<%= render 'form', note: @note %>
-
-<%= link_to 'Back', notes_path %>
-<%= link_to 'Delete', @note.destroy, class:'btn btn-danger'%>
+<div class='card'>
+    <center>
+        <h1>Editing Note</h1>
+        
+        <%= render 'form', note: @note %>
+        
+        <%= link_to 'Back', url_for(:back), class: 'btn btn-primary' %>
+        <%= link_to 'Delete', @note.destroy, class:'btn btn-danger'%>
+    </center>
+</div>

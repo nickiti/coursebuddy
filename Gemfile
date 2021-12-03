@@ -14,7 +14,8 @@ gem 'sass-rails', '>= 6'
 gem 'jquery-rails'
 gem 'countdown-rails'
 gem 'draggable-rails'
-
+gem 'will_paginate', '~> 3.1.1'
+gem 'will_paginate-bootstrap'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'

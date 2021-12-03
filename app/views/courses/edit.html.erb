@@ -1,5 +1,10 @@
-<h1>Editing Course</h1>
-
-<%= render 'form', course: @course %>
-
-<%= link_to 'Back', courses_path %>
+<div class='card'>
+    <center>
+        <h1>Editing Course</h1>
+        
+        <%= render 'form', course: @course %>
+        
+        <%= link_to 'Back', url_for(:back), class: 'btn btn-primary' %>
+        <%= link_to 'Delete', @course.destroy, class:'btn btn-danger'%>
+    </center>
+</div>

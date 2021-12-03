@@ -22,6 +22,58 @@
         }
       } );
       
+      $( function() {
+        $( "#movable2" ).draggable();
+        handle: ".handle",
+        iframeFix: true,
+        start: function(event, ui) {
+          $('.frameOverlay').show();
+        },
+        stop: function(event, ui) {
+          $(".frameOverlay").hide();
+        }
+      } );
+      
+      $( function() {
+        $( "#movable3" ).draggable();
+        handle: ".handle",
+        iframeFix: true,
+        start: function(event, ui) {
+          $('.frameOverlay').show();
+        },
+        stop: function(event, ui) {
+          $(".frameOverlay").hide();
+        }
+      } );
+    </script>
+    <script>
+     var s = 0;
+      var t;
+      var timer_is_on = 0;
+      var m = 0;
+      var r = 0;
+      
+      function timedCount() {
+        s = s + 1;
+        t = setTimeout(timedCount, 1000);
+        m = Math.floor(s / 60);
+        r = s - (m * 60);
+        $('span.txt').text(`${m} : ${r}`);
+        
+      }
+      
+      function startCount() {
+        if (!timer_is_on) {
+          timer_is_on = 1;
+          timedCount();
+        }
+      }
+      
+      function stopCount() {
+        clearTimeout(t);
+        timer_is_on = 0;
+        timeElapsed = s;
+      }
     </script>
 
     

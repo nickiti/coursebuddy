@@ -8,4 +8,11 @@ class Assignment < ApplicationRecord
     ['In Progress','in-progress'],
     ['Complete','complete']
   ]
+  
+  def count_time 
+    starting = Process.clock.gettime(Process::CLOCK_MONOTONIC)
+    ending = Process.clock.gettime(Process::CLOCK_MONOTONIC)
+    elapsed = ending - starting
+  end
+  
 end

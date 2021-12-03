@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'Back', notes_path, class:'btn btn-primary' %>
-
-
-<h1><%= @note.title %></h1>
-  
-
-<p>
-  <%= @note.content %>
-</p>
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
+<div class='card'>
+    <center>
+        <h1>
+            <%= @note.title %>
+            <%= link_to 'Edit', edit_note_path(@note), class: 'btn btn-outline' %> 
+            <%= link_to 'Back', url_for(:back), class: 'btn btn-primary' %>
+        </h1>
+          
+        
+        <p class='fill'>
+          <%= @note.content %>
+        </p>
+    </center>
+</div>

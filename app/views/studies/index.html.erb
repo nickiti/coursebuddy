@@ -56,15 +56,31 @@
     </div>
   </div>
   
-  <div class='frameOverlay' id='movable'></div>
-      <div class='resizeable' id='movable'>
-        <div id='movable'>
+  <div class='frameOverlay'></div>
+      <div class='resizeable'>
+        <div id='movable2'>
             <div class='handle'></div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" 
             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen class='card'></iframe>
         </div>
     </div>
+    
+<div class='notes card' id='movable3'>
+        <div>
+            <h2>Notes</h2>   
+            <div class="card-header">
+                <% @notes.each do |note| %>
+                <div class='card'>
+                    <%= link_to note do %>
+                      <h2><%= note.title %></h2>
+                    <%end%>
+                </div>
+                <% end %>
+              </div>
+          </div>
+  </div>
+    
     
   <%= javascript_pack_tag 'main'%>
   <%= javascript_pack_tag 'draggable'%>
