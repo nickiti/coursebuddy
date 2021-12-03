@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CmApp</title>
+    <title>Course Buddy</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css'>
     <link rel='stylesheet' href='./app/assests/stylesheets/application.css'>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( "#movable" ).draggable();
+        handle: ".handle",
+        iframeFix: true,
+        start: function(event, ui) {
+          $('.frameOverlay').show();
+        },
+        stop: function(event, ui) {
+          $(".frameOverlay").hide();
+        }
+      } );
+      
+    </script>
+
     
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class='background'>
     <div class='container pt-5'>
       <div class='col-3'> 
       <div class='topcorner'>
@@ -21,14 +37,14 @@
       </div>
       <% if user_signed_in? %>
         <%= render "layouts/sidenav" %> 
-      <% end %>
+        
+       <% end %>
+       
       </div>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-      <div class='card float-right'>
-        <div class='card-body'>
+      <div>
           <%= yield %>          
-        </div>
       </div>
     </div>
   </body>

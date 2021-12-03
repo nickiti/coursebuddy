@@ -1,10 +1,14 @@
-
+<div class='nav-bar row'>
+  <div class='column'>Home</div>
+  <div class='column'>Solutions</div>
+  <div class='column'>Resources</div>
+</div>
 
 <div class="card">
 <h2><center>Sign in</center></h2>
 <center><img src="logo.png" width="200" height="150"></center>
 
-<h5><center> Welcome, let us organize your day </center></h5>
+<h4><center> Welcome, let us organize your day </center></h4>
 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
