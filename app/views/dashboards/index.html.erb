@@ -2,16 +2,18 @@
 
  
 
+<div class='card'>
+   <h1>Hello Welcome <%= current_user.email %></h1>
+</div>
+<br>
 
-  <h1>Hello Welcome <%= current_user.email %></h1>
-  <div class="input-group">
-    <%= form_tag(notes_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search", class: 'form-control' %>
-      <span class="input-group-btn">
-        <%= submit_tag "Search", class: 'btn btn-default' %>
-      </span>
-    <% end %>
+  <div class='card'>
+    <h4 class='text-center'>How do you spend your time</h4>
+    <%= pie_chart Note.group(:created_at).count %>
   </div>
+
+  <br>
+  <br>
 
   <div class="card">
     <div>
@@ -21,7 +23,6 @@
         <% @courses.each do |course| %>
             <% course.assignments.each do |assignment| %>
                 <div class='card-fancy'>
-                  
                   <div class="row assignment">
                     <div class="column">
                       <%= course.name %> <br>
@@ -51,7 +52,7 @@
                         <div class='btn btn-danger stop' id='mixBut' onclick="stopCount()">
                           STOP
                         </div>
-                        <span class='txt'></span>
+                        <p class='txt'></p>
                     </div>
                 </div>
                 <div class="topcorner">

@@ -9,6 +9,7 @@
     <link rel='stylesheet' href='./app/assests/stylesheets/application.css'>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
     <script>
       $( function() {
         $( "#movable" ).draggable();
@@ -45,9 +46,10 @@
           $(".frameOverlay").hide();
         }
       } );
+      
     </script>
     <script>
-     var s = 0;
+      var s = 0;
       var t;
       var timer_is_on = 0;
       var m = 0;
@@ -58,7 +60,7 @@
         t = setTimeout(timedCount, 1000);
         m = Math.floor(s / 60);
         r = s - (m * 60);
-        $('span.txt').text(`${m} : ${r}`);
+        $('p.txt').text(`${m}:${r.toString().padStart(2, '0')}`);
         
       }
       
@@ -100,4 +102,6 @@
       </div>
     </div>
   </body>
+  
+  
 </html>

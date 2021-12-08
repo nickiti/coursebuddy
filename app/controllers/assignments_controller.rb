@@ -5,7 +5,7 @@ class AssignmentsController < ApplicationController
 
   # GET courses/1/assignments
   def index
-    @assignments = @course.assignments.paginate(page: params[:page], per_page: 5)
+    @assignments = @course.assignments.search(params[:q])
   end
 
   # GET courses/1/assignments/1
@@ -48,12 +48,11 @@ class AssignmentsController < ApplicationController
     redirect_to (@assignment.course)
   end
   
-  def count_time 
-    starting = Process.clock.gettime(Process::CLOCK_MONOTONIC)
-    ending = Process.clock.gettime(Process::CLOCK_MONOTONIC)
-    elapsed = ending - starting
+  def search
+    @assignments = @course.assignments.search(params[:q])
+    render "course"
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course

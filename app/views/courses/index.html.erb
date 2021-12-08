@@ -6,6 +6,11 @@
       <%= link_to 'Add Course', new_course_path, class: 'btn btn-primary' %>
     </h2>
     
+      <%= form_tag :courses, method: :get, class: "search" do %>
+        <%= text_field_tag "q", params[:q] %>
+        <%= submit_tag "search"%>
+      <% end %>
+    
     <% @courses.each do |course| %>
       <%= link_to course do %>
         <div class="card-fancy">

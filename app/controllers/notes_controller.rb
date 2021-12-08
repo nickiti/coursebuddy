@@ -4,9 +4,8 @@ class NotesController < ApplicationController
 
   # GET /notes or /notes.json
   def index
-    @notes = current_user.notes
+    @notes = current_user.notes.search(params[:q])
   end
-
   # GET /notes/1 or /notes/1.json
   def show
   end
@@ -49,12 +48,8 @@ class NotesController < ApplicationController
   end
   
   def search
-    if params[search].blank?
-      redirect_to notes_path and return
-    else
-      @parameter = params[:search].downcase
-      @results = Notes.all.where("lower(name)) LIKE :search", search: "%#{@parameter}%)")
-    end
+    @notes = Note.search(params[:q])
+    render "index"
   end
   
 

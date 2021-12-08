@@ -22,6 +22,11 @@
       <span>Assignments</span>
       <%= link_to 'New Assignment', new_course_assignment_path(@course.id), class: 'btn btn-primary' %>
     </h2>
+    
+      <%= form_tag @assignment.course, method: :get, class: "search" do %>
+        <%= text_field_tag "q", params[:q] %>
+        <%= submit_tag "search"%>
+      <% end %>
 
     <% @course.assignments.each do |assignment| %>
       <% if assignment.persisted? %>

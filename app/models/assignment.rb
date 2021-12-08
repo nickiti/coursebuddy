@@ -9,10 +9,14 @@ class Assignment < ApplicationRecord
     ['Complete','complete']
   ]
   
-  def count_time 
-    starting = Process.clock.gettime(Process::CLOCK_MONOTONIC)
-    ending = Process.clock.gettime(Process::CLOCK_MONOTONIC)
-    elapsed = ending - starting
+   class << self
+    def search(query)
+      rel = order("id")
+      if query.present?
+        rel = rel.where("name LIKE?", "%#{query}%")
+      end
+      rel
+    end
   end
   
 end

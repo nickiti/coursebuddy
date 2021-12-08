@@ -1,290 +1,343 @@
-
-  
- <style>
-     /* Navigation */
+<style>
+    /* Navigation */
 
 .nav-container {
-  background: #fffffa;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
-  height: 72px;
-  margin-top: -65px;
-  z-index: 500;
-  position: relative;
+ background: #fffffa;
+ box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+ height: 72px;
+ margin-top: -65px;
+ z-index: 500;
+ position: relative;
 }
 
 .wrapper {
-  width: 1200px;
-  margin: 0 auto;
+ width: 1200px;
+ margin: 0 auto;
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 72px;
 }
 
 nav ul {
-  display: flex;
+ display: flex;
 }
 
 nav .logo {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 64px;
-  color: #021718;
+    position: relative;
+    left:-140px;
+ font-family: "Poppins", sans-serif;
+ font-style: normal;
+ font-weight: 800;
+ font-size: 40px;
+ color: #F67570;
 }
 
 .nav-items li {
-  list-style: none;
-  margin-right: 100px;
+ list-style: none;
+ margin-right: 100px;
 }
 
 .nav-items li:nth-last-of-type(1) {
-  margin: 0;
+ margin: 0;
 }
 
 .nav-items li a {
-  color: #021718;
-  font-size: 24px;
-  font-family: "Poppins", sans-serif;
-  text-decoration: none;
+position: relative;
+left: 200px;
+ color: #021718;
+ font-size: 24px;
+ font-family: "Poppins", sans-serif;
+ text-decoration: none;
 }
 
 /* Header */
 
 .header-container {
-  background: #f5a05c url("images/bg-shape.svg");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain;
-  height: calc(100vh - 72px);
-  display: flex;
-  align-items: center;
+ background: #FFD7B1 url("images/bg-shape.svg");
+ background-repeat: no-repeat;
+ background-position: right;
+ background-size: contain;
+ height: calc(100vh - 72px);
+ display: flex;
+ align-items: center;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
 }
 
 header h1 {
-  font-weight: 900;
-  font-size: 64px;
-  line-height: 75px;
-  color: #021718;
-  margin-bottom: 24px;
+    position: absolute;
+width: 458px;
+height: 10px;
+left: 105px;
+top: 254px;
+
+font-family: "Poppins", sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 60px;
+line-height: 90px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #F67570;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 header p {
-  font-size: 24px;
-  line-height: 42px;
-  color: #021718;
-  width: 418px;
+    position: absolute;
+    width: 431px;
+height: 10px;
+left: 90px;
+top: 351px;
 
-  margin-bottom: 48px;
+font-family: "Poppins", sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 45px;
+line-height: 67px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #00B2FE;
 }
 
 header a {
-  color: #fffffa;
-  font-size: 24px;
-  text-decoration: none;
 
-  background: #01847f;
-  border-radius: 8px;
-  padding: 12px 48px;
-  display: inline-block;
-  transition: 300ms;
+    position: absolute;
+    width: 300px;
+height: 120px;
+left: 100px;
+top: 475px;
+    
+ text-decoration: none;
+
+ font-family: "Poppins", sans-serif;
+font-style: normal;
+font-weight: 800;
+font-size: 35px;
+line-height: 60px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+text-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+ background: #F67570;
+ border-radius: 8px;
+ padding: 12px 48px;
+ display: inline-block;
+ transition: 300ms;
 }
 
 header a:hover {
-  transform: translateY(-8px);
+ transform: translateY(-8px);
 }
 
 /* Social Icons */
 
 .social-icons {
-  display: flex;
-  align-items: center;
+ display: flex;
+ align-items: center;
 }
 
 .social-icons a {
-  margin: 0 24px;
+ margin: 0 24px;
 }
 
 .social-icons a:nth-of-type(1) {
-  margin-left: 0;
+ margin-left: 0;
 }
 
 /* Hero image */
 
 header .hero-image {
-  position: relative;
+ position: relative;
 }
 
 header .hero-image img {
-  transition: 300ms;
-  position: relative;
-  z-index: 100;
+ transition: 300ms;
+ position: relative;
+ z-index: 100;
 }
 
 header .hero-image img:hover {
-  transform: rotate(-6deg);
+ transform: rotate(-6deg);
 }
 
 header .hero-image .photo-bg {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  left: 45px;
-  top: 24px;
+ position: absolute;
+ width: 500px;
+ height: 500px;
+ left: -500px;
+ top: -150px;
 
-  background: #44a1a0;
-  transform: rotate(-6deg);
+ background: #44a1a0;
+ transform: rotate(-6deg);
 }
+
 
 /* Search Box */
 
 .search-box {
-  width: 1200px;
-  margin: 0 auto;
-  text-align: right;
-  position: relative;
-  top: 0;
-  z-index: 101;
+ width: 1200px;
+ margin: 0 auto;
+ text-align: right;
+ position: relative;
+ top: 0;
+ z-index: 101;
 
-  transition: 300ms;
+ transition: 300ms;
 }
 
 .search-box.active {
-  top: 72px;
+ top: 72px;
 }
 
 .search-box input {
-  background: #fffffa;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  border-radius: 0px 0px 8px 8px;
+ background: #fffffa;
+ box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+ border-radius: 0px 0px 8px 8px;
 
-  font-size: 24px;
-  line-height: 42px;
-  border: 0;
-  padding: 12px 48px;
+ font-size: 24px;
+ line-height: 42px;
+ border: 0;
+ padding: 12px 48px;
 }
 
 .search-box input::placeholder {
-  color: #b3b3b3;
+ color: #b3b3b3;
 }
 
 /* Search & Close Buttons */
 
 .nav-btn-container {
-  display: flex;
-  position: relative;
+ display: flex;
+ position: relative;
 }
 
 .nav-btn-container img {
-  position: absolute;
+ position: absolute;
 }
 
 .nav-btn-container .close-btn {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-8px);
-  transition: 300ms;
+ opacity: 0;
+ pointer-events: none;
+ transform: translateY(-8px);
+ transition: 300ms;
 }
 
 .nav-btn-container .search-btn {
-  pointer-events: auto;
-  transition: 300ms;
+ pointer-events: auto;
+ transition: 300ms;
 }
 
 .nav-btn-container.active .search-btn {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-8px);
+ opacity: 0;
+ pointer-events: none;
+ transform: translateY(-8px);
 }
 
 .nav-btn-container.active .close-btn {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
+ opacity: 1;
+ pointer-events: auto;
+ transform: translateY(0);
 }
 
 /* Hidden Items */
 
 .search-box {
-  /* display: none; */
+ /* display: none; */
 }
- </style>
-    <div class="search-box">
-      <input type="text" placeholder="Search here..." />
-    </div>
+</style>
+   <div class="search-box">
+     <input type="text" placeholder="Search here..." />
+   </div>
 
-    <div class="nav-container">
-      <div class="wrapper">
-        <nav>
-          <div class="logo">
-            D.
-          </div>
+   <div class="nav-container">
+     <div class="wrapper">
+       <nav>
+         <div class="logo">
+           Course Buddy
+         </div>
 
-          <ul class="nav-items">
-            <li>
-              <a href="#">blog</a>
-            </li>
+         <ul class="nav-items">
+           <li>
+             <a href="#">Sign-In</a>
+           </li>
 
-            <li>
-              <a href="#">contact</a>
-            </li>
+           <li>
+             <a href="#">About</a>
+           </li>
 
-            <li>
-              <a href="#">about</a>
-            </li>
+           <li>
+             <a href="#">Contact</a>
+           </li>
 
-            <li>
-              <a class="nav-btn-container" href="#">
-                <img class="search-btn" src="images/search-icon.svg" alt="" />
-                <img class="close-btn" src="images/close-icon.svg" alt="" />
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+           <li>
+            <a href="#">Help</a>
+          </li>
 
-    <div class="header-container">
-      <div class="wrapper">
-        <header>
-          <div class="hero-content">
-            <h1>Hi, I’m Darlene</h1>
-            <p>
-              I design beautiful websites & mobile apps that modern trends
-              demand
-            </p>
-            <a href="#">
-              Contact Me
-            </a>
-          </div>
+           <li>
+             <a class="nav-btn-container" href="#">
+               <img class="search-btn" src="images/search-icon.svg" alt="" />
+               <img class="close-btn" src="images/close-icon.svg" alt="" />
+             </a>
+           </li>
+         </ul>
+       </nav>
+     </div>
+   </div>
 
-          <div class="hero-image">
-            <img src="images/photo.png" alt="" />
-            <div class="photo-bg"></div>
-          </div>
-        </header>
+   <div class="header-container">
+     <div class="wrapper">
+       <header>
+         <div class="hero-content">
+           <h1>Course Buddy</h1>
+           <p>
+             We'll make each day easier
+           </p>
+           <a href="#">
+             Sign up for free!
+           </a>
+         </div>
 
-        <div class="social-icons">
-          <a href="#">
-            <img src="images/instagram-logo.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="images/behance-logo.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="images/dribbble-logo.png" alt="" />
-          </a>
+         <div class="hero-image">
+           <img src="images/photo.png" alt="" />
+           <div class="photo-bg"></div>
+         </div>
+       </header>
+
+       <div class="logoo">
+        <img src="https://static.thenounproject.com/png/8792-200.png" alt=""/>
+        <div class="photo-bg"></div>
         </div>
-      </div>
-    </div>
+    </header>
 
-    <script src="main.js"></script>
+       <div class="social-icons">
+         <a href="#">
+           <img src="images/instagram-logo.png" alt="" />
+         </a>
+         <a href="#">
+           <img src="images/behance-logo.png" alt="" />
+         </a>
+         <a href="#">
+           <img src="images/dribbble-logo.png" alt="" />
+         </a>
+       </div>
+     </div>
+   </div>
+
+   <script src="main.js"></script>
+

@@ -2,29 +2,31 @@
 
 
 <div class="card">
-  <h2 class='card-header d-flex justify-content-between'>
-      <span>Notes</span>
-      <%= link_to 'Add Note', new_note_path, class: 'btn btn-primary' %>
-    </h2>
-  <div class="input-group">
-    <div>
-      <%= form_tag(notes_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search", class: 'form-control' %>
-        <span class="input-group-btn">
-          <%= submit_tag "Search", class: 'btn btn-default' %>
-        </span>
+  <div class='card-header'>
+    <h2 class='d-flex justify-content-between'>
+        <span>Notes</span>
+        <%= link_to 'Add Note', new_note_path, class: 'btn btn-primary' %>
+      </h2>
+      
+      
+      <%= form_tag :notes, method: :get, class: "search" do %>
+        <%= text_field_tag "q", params[:q] %>
+        <%= submit_tag "search"%>
+      <% end %>
+
+    
+    <div class="card-header" style="justify-content:center">
+      <% @notes.each do |note| %>
+      <div class='card-fancy'>
+        <div class='assignment'>
+          <%= link_to note do %>
+            <h2><%= note.title %></h2>
+          <%end%>
+        </div>
       </div>
-    <% end %>
-  </div>
-  <div class="card-header" style="justify-content:center">
-    <% @notes.each do |note| %>
-    <div class='card-fancy'>
-        <%= link_to note do %>
-          <h2><%= note.title %></h2>
-        <%end%>
+      <br>
+      <% end %>
     </div>
-    <br>
-    <% end %>
   </div>
 </div>
 

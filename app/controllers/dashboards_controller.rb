@@ -5,8 +5,8 @@ class DashboardsController < ApplicationController
   # GET /dashboards or /dashboards.json
   def index
     @dashboard = Dashboard.all
-    @courses = current_user.courses
-    @notes = current_user.notes
+    @courses = current_user.courses.paginate(page: params[:page], per_page: 5)
+    @notes = current_user.notes.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /dashboards/1 or /dashboards/1.json

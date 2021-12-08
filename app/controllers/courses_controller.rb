@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @courses = current_user.courses
+    @courses = current_user.courses.search(params[:q])
   end
 
   # GET /courses/1 or /courses/1.json
@@ -56,6 +56,11 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url, notice: "Course was successfully destroyed." }
       format.json { head :no_content } 
     end
+  end
+  
+  def search
+    @courses = Course.search(params[:q])
+    render "index"
   end
   
 

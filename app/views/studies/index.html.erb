@@ -66,21 +66,44 @@
         </div>
     </div>
     
-<div class='notes card' id='movable3'>
-        <div>
-            <h2>Notes</h2>   
-            <div class="card-header">
-                <% @notes.each do |note| %>
-                <div class='card'>
-                    <%= link_to note do %>
-                      <h2><%= note.title %></h2>
-                    <%end%>
-                </div>
-                <% end %>
-              </div>
-          </div>
-  </div>
     
+    
+<div class="card notes" id='movable3'>
+    <div>
+      <div class='container text-center'>
+        <h2>Assignments</h2>
+        <% @courses.each do |course| %>
+            <% course.assignments.each do |assignment| %>
+                <div class='card'>
+                  <div class="row">
+                    <div class="column">
+                      <%= course.name %> <br>
+                      <%= assignment.name %>
+                    </div>
+        
+                    <div class='column'>
+                      <%= assignment.date.strftime("DUE AT: %I:%M %p") %>
+                      <br>
+                      <%= assignment.date.strftime("%b %d") %>
+                    </div>
+                    <div class='column'>
+                        <div class='btn btn-primary start ' id='mixBut' onclick="startCount()">
+                          START
+                        </div>
+                        <div class='btn btn-danger stop' id='mixBut' onclick="stopCount()">
+                          STOP
+                        </div>
+                        <p class='txt'></p>
+                    </div>
+                </div>
+                </div>
+          <% end %>
+        <% end %>
+      <br>
+      <br>
+      </div>  
+    </div>
+  </div>
     
   <%= javascript_pack_tag 'main'%>
   <%= javascript_pack_tag 'draggable'%>
