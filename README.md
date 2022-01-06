@@ -1,24 +1,27 @@
-# README
+# CourseBuddy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a productivity manager designed for people in school to help you keep track of your time studying and how you use it
 
-Things you may want to cover:
+You can check it out here:
+https://mis4397f21-coursebuddy-tntn.herokuapp.com/
 
-* Ruby version
 
-* System dependencies
+It includes courses, assignments, and notes that you can use to help you keep track of your classwork.
 
-* Configuration
 
-* Database creation
+There is a interactive study environment that includes pomodoro timers, youtube videos, an assignment widget.
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# NEED HELP
+If anyone can help me figure out or show best practices on working on other features including:
 
-* Deployment instructions
+<ul>
+  <li>Mutiple choosable widgets</li>
+  <li>Backend work with AJAX</li>
+  <li>Timetracking</li>
+  <li>Database modeling</li>
+</ul>
 
-* ...
+
+Thanks guys !
