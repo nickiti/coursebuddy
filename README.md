@@ -12,6 +12,7 @@ It includes courses, assignments, and notes that you can use to help you keep tr
 There is a interactive study environment that includes pomodoro timers, youtube videos, an assignment widget.
 
 DASHBOARD
+
 <img width="721" alt="Screen Shot 2022-02-16 at 1 32 39 PM" src="https://user-images.githubusercontent.com/75097676/154341833-8018a38e-a6ce-43ad-a423-52ccc241f6e2.png">
 
 
